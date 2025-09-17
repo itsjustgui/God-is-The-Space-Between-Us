@@ -15,13 +15,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      gsap.from(this.title.nativeElement, { duration: 3, y: -50, opacity: 100, ease: 'power2.out' });
+      gsap.from(this.title.nativeElement, { duration: 1, y: -50, opacity: 100, ease: 'power2.out' });
       gsap.from(this.subtitle.nativeElement, { duration: 1, y: 50, opacity: 0, ease: 'power2.out', delay: 0.5 });
-    }, 3100);
+    }, 4700);
   }
   ngOnInit(): void {
     setTimeout(() => {
       this.showSplash = false;
-    }, 5000);
+    }, 4500);
   }
 }
