@@ -1,27 +1,28 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit} from '@angular/core';
 import gsap from 'gsap';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
 
   showSplash = true;
-  @ViewChild('title') title!: ElementRef;
-  @ViewChild('subtitle') subtitle!: ElementRef;
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      gsap.from(this.title.nativeElement, { duration: 1, y: -50, opacity: 100, ease: 'power2.out' });
-      gsap.from(this.subtitle.nativeElement, { duration: 1, y: 50, opacity: 0, ease: 'power2.out', delay: 0.5 });
-    }, 4700);
+  ngOnInit() {
+    const splashShown = sessionStorage.getItem('splashShown');
+    
+    if (splashShown) {
+      // If they have been here before in this session, skip splash immediately
+      //this.showSplash = false;
+    }
   }
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.showSplash = false;
-    }, 4500);
+
+  onSplashFinished() {
+    // Triggered by the child component when video ends
+    this.showSplash = false;
+    sessionStorage.setItem('splashShown', 'true');
   }
 }

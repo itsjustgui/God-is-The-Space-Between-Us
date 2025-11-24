@@ -1,30 +1,17 @@
-<!-- Splash Screen -->
+<video 
+  class="global-bg-video" 
+  autoplay muted loop playsinline> 
+  <source src="background_noaudio.mp4" type="video/mp4">
+</video>
+
 @if (showSplash) {
-  <div class="splash-screen">
-    <img src="test3.gif" alt="Loading..." class="splash-gif">
-  </div>
+  <app-splash-screen (animationDone)="onSplashFinished()"></app-splash-screen>
 }
 
-<!-- Main Content -->
 @if (!showSplash) {
+  <app-header></app-header>
+  
   <div class="main-content">
-    <!-- Background Video -->
-    <video autoplay muted loop playsinline class="bg-video">
-      <source src="assets/background.mp4" type="video/mp4">
-    </video>
-
-    <!-- Overlay Text -->
-    <div class="overlay-text">
-      <h1 #title>Welcome to My App</h1>
-      <p #subtitle>Your custom intro text goes here</p>
-    </div>
-
-    <!-- Embedded Video -->
-    <div class="video-container">
-      <video width="100%" controls>
-        <source src="assets/myvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 }
