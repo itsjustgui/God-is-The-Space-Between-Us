@@ -8,6 +8,7 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { HeaderComponent } from './header/header.component';
 import { TheGalleryComponent } from './the-gallery/the-gallery.component';
 import { TheLetterComponent } from './the-letter/the-letter.component';
+import { ScrollFabComponent } from './scroll-fab/scroll-fab.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,11 @@ import { TheLetterComponent } from './the-letter/the-letter.component';
     SplashScreenComponent,
     HeaderComponent,
     TheGalleryComponent,
-    TheLetterComponent
+    TheLetterComponent,
+    ScrollFabComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,11 +1,33 @@
 <div class="main-content">
-  <h1 #title>Welcome</h1>
-  <p #subtitle>Subtitle here</p>
+  <div class="header-text-container">
+    <h1 class="title">
+      A Repository <br />
+      of Our Time
+    </h1>
+    <p class="subtitle">#always remembered, forever treasured.</p>
 
-  <div class="video-container">
-     <video width="80%" controls >
-      <source src="myvideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div class="navigation-buttons">
+      <button class="nav-button" routerLink="/the-letter">For Your Eyes Only</button>
+      <button class="nav-button" routerLink="/the-gallery">Shared Moments</button>
+    </div>
   </div>
+
+  <!-- Content to enable scrolling (mock memories) -->
+  <div class="content-spacer">
+    <p>A collection of memories will appear here as you scroll.</p>
+    <p>This space ensures the page is tall enough to allow the user to scroll past the prompt.</p>
+  </div>
+  <section class="ripped-paper-section">
+    <div class="ripped-content-wrapper">
+      <h2 class="ripped-title">Our Milestone</h2>
+      <p class="ripped-text">
+        Every day with you is a treasure. This date marks one of the most significant chapters in
+        our story—a reminder of where we began and all the beautiful places we still have left to
+        explore together.
+      </p>
+    </div>
+  </section>
+  <div class="content-spacer"></div>
+  <div class="content-spacer"></div>
+  <app-scroll-fab></app-scroll-fab>
 </div>

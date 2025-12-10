@@ -5,8 +5,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   standalone: false,
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomePageComponent {
-
-}
+export class HomePageComponent {}

@@ -10,7 +10,7 @@
   /* 2. Visuals */
   background-color: rgba(255, 255, 255, 0.233); /* Slight transparency looks nice */
   backdrop-filter: blur(10px); /* iOS "frosted glass" effect */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 0 1rem;
   box-sizing: border-box;
 
@@ -22,7 +22,7 @@
   .logo {
     /* Logo is centered by the parent flex container */
     img {
-      height: 70px; /* Reduced slightly to fit a standard mobile header */
+      height: 60px; /* Reduced slightly to fit a standard mobile header */
       width: auto;
       display: block;
     }
@@ -31,7 +31,7 @@
   /* 4. Hamburger (Force to Right) */
   .hamburger-menu {
     position: absolute; /* Take out of flow to not push logo */
-    right: 1rem; 
+    right: 1rem;
     top: 39%;
     transform: translateY(-50%); /* Perfect vertical center */
     display: flex;
@@ -56,12 +56,12 @@
       padding: 1rem;
       margin: 0;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border: 1px solid #eee;
 
       li {
         margin-bottom: 0.8rem;
-        
+
         &:last-child {
           margin-bottom: 0;
         }

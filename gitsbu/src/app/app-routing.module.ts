@@ -7,7 +7,6 @@ import { HomePageComponent } from './home-page/home-page.component'; // Assuming
 import { TheLetterComponent } from './the-letter/the-letter.component'; // Placeholder
 import { TheGalleryComponent } from './the-gallery/the-gallery.component'; // Placeholder
 
-
 // Define your routes here
 const routes: Routes = [
   // 1. Default Route (Path '')
@@ -18,12 +17,12 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'the-letter', component: TheLetterComponent },
   { path: 'the-gallery', component: TheGalleryComponent },
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
   // UseHash: true is crucial for making GitHub Pages routing work properly
   imports: [RouterModule.forRoot(routes, { useHash: true })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-the-letter',
   standalone: false,
   templateUrl: './the-letter.component.html',
-  styleUrl: './the-letter.component.scss'
+  styleUrl: './the-letter.component.scss',
 })
-export class TheLetterComponent {
-
-}
+export class TheLetterComponent {}

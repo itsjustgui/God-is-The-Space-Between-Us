@@ -5,27 +5,162 @@
   overflow: hidden;
 }
 
-.overlay-text {
+.header-text-container {
   text-align: center;
-  color: white;
-  padding: 4rem 1rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-}
-.overlay-text h1 {
-  font-size: 2.5rem;
-}
-.overlay-text p {
-  font-size: 1.2rem;
+  padding: 9.5rem 1rem 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Embedded Video */
-.video-container {
+/* 2. Main Title  */
+.title {
+  /* Use a serif font that has a cursive/elegant appearance */
+  font-family: 'Story Script', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3.8rem;
+  color: #2a3d66;
+  margin: 0;
+}
+
+/* 3. Subtitle */
+.subtitle {
+  font-size: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  opacity: 0.8;
+  color: #4c4c4c;
+  margin-top: 0.5rem;
+}
+
+/* --- NAVIGATION BUTTON STYLES --- */
+.navigation-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 12rem; /* Space between buttons */
+  margin-top: 2.5rem; /* Increased space below subtitle */
+  padding: 0 1rem; /* Ensure padding on mobile */
+}
+
+.nav-button {
+  /* Allows buttons to grow on wider screens but maintain max size */
+  flex-grow: 1;
+  max-width: 200px;
+
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-heading-color); /* Text color: creamy white */
+  background-color: var(--color-accent); /* Background color: muted rose */
+  border: 2px solid var(--secondary-color);
+  border-radius: 9999px; /* Pill shape */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap; /* Prevent text wrapping inside button */
+}
+
+.nav-button:hover {
+  background-color: #c390b0; /* Slightly darker rose on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Media query for mobile: stack the buttons vertically */
+@media (max-width: 550px) {
+  .navigation-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .nav-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+/* --- END NAVIGATION BUTTON STYLES --- */
+
+/* Spacer to force scrolling */
+.content-spacer {
+  height: 50vh;
+  text-align: center;
+  padding: 2rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* --- RIPPED PAPER SECTION STYLES --- */
+.ripped-paper-section {
+  position: relative;
+  width: 100%;
+  padding: 3rem 0; /* Vertical padding */
+  margin: 4rem 0; /* Margin separates it from other elements */
+  background-color: var(--color-paper);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Ensures the paper sits above other elements if needed */
+}
+
+/* The core of the ripped effect: radial gradient on pseudo-elements */
+.ripped-paper-section::before,
+.ripped-paper-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 15px; /* Height of the ripped edge effect */
+  background: none;
+  z-index: 15;
+}
+
+/* Top ripped edge */
+.ripped-paper-section::before {
+  top: -15px; /* Position above the section */
+  /* Create the jagged edge texture using a repeating radial gradient for shadow/light */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.1),
+    0 3px 3px rgba(0, 0, 0, 0.05); /* Soft shading */
+  background-image: repeating-radial-gradient(
+    circle at 10px 100%,
+    var(--color-paper) 8px,
+    transparent 8px,
+    transparent 10px
+  );
+  background-size: 20px 20px;
+  background-position: 0% 100%;
+}
+
+/* Bottom ripped edge */
+.ripped-paper-section::after {
+  bottom: -15px; /* Position below the section */
+  /* Flip the shadows and gradient direction */
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2), 0 -2px 2px rgba(0, 0, 0, 0.1),
+    0 -3px 3px rgba(0, 0, 0, 0.05);
+  background-image: repeating-radial-gradient(
+    circle at 10px 0%,
+    var(--color-paper) 8px,
+    transparent 8px,
+    transparent 10px
+  );
+  background-size: 20px 20px;
+  background-position: 0% 0%;
+}
+
+.ripped-content-wrapper {
   max-width: 600px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1.5rem;
 }
-video {
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  margin-left: 10%;
+
+.ripped-title {
+  font-family: var(--font-title);
+  color: #696969; /* Darker gray for contrast on paper */
+  margin-bottom: 0.5rem;
 }
+
+.ripped-text {
+  font-family: var(--font-body);
+  color: #708090;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+/* --- END RIPPED PAPER SECTION STYLES --- */

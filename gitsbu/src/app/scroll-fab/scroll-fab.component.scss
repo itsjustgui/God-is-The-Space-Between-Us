@@ -1,0 +1,60 @@
+/* Keyframe for the subtle bounce animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.scroll-fab-container {
+  /* Positioning the FAB at the bottom center of the viewport */
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Styling for the overall look */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+
+  /* Aesthetic adjustments for the nostalgic/dreamy look */
+  color: #d1952e; /* Muted Rose/Pink Accent */
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Soft glow */
+  transition: opacity 0.3s;
+}
+
+.scroll-fab-container:hover {
+  opacity: 0.8;
+}
+
+.scroll-arrow-icon {
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  border: 2px solid #d1952e; /* Muted rose border */
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+
+  /* Apply the animation to the icon itself */
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.scroll-arrow-icon svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg); /* Flip the arrow to point down */
+}
+
+.scroll-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}

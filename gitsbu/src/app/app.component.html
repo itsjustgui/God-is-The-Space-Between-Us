@@ -1,7 +1,5 @@
-<video 
-  class="global-bg-video" 
-  autoplay muted loop playsinline> 
-  <source src="background_noaudio.mp4" type="video/mp4">
+<video class="global-bg-video" autoplay muted loop playsinline>
+  <source src="background_noaudio.mp4" type="video/mp4" />
 </video>
 
 @if (showSplash) {
@@ -10,7 +8,7 @@
 
 @if (!showSplash) {
   <app-header></app-header>
-  
+
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
