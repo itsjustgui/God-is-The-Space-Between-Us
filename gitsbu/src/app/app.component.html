@@ -3,13 +3,11 @@
 </video>
 
 @if (showSplash) {
-  <app-splash-screen (animationDone)="onSplashFinished()"></app-splash-screen>
-}
+<app-splash-screen (animationDone)="onSplashFinished()"></app-splash-screen>
+} @if (!showSplash) {
+<app-header></app-header>
 
-@if (!showSplash) {
-  <app-header></app-header>
-
-  <div class="main-content">
-    <router-outlet></router-outlet>
-  </div>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
 }

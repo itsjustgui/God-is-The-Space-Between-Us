@@ -12,6 +12,15 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
