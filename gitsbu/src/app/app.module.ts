@@ -8,6 +8,7 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { HeaderComponent } from './header/header.component';
 import { TheGalleryComponent } from './the-gallery/the-gallery.component';
 import { TheLetterComponent } from './the-letter/the-letter.component';
+import { RippedPaperSectionComponent } from './ripped-paper-section/ripped-paper-section.component';
 import { ScrollFabComponent } from './scroll-fab/scroll-fab.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +24,7 @@ import { provideHttpClient } from '@angular/common/http';
     TheLetterComponent,
     ScrollFabComponent,
     FooterComponent,
+    RippedPaperSectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, ReactiveFormsModule],
   providers: [provideHttpClient()],
