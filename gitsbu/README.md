@@ -1,53 +1,50 @@
-# Gitsbu
+# God-is-The-Space-Between-Us
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.16.
+> My personal project made as a farewell to Ines Gomes.
 
-## Development server
+---
 
-To start a local development server, run:
+## Quick Commands
 
-```bash
-ng serve
-```
+| Task                   | Command                                              |
+| ---------------------- | ---------------------------------------------------- |
+| Install Dependencies   | `npm install`                                        |
+| Run in Development     | `ng serve --o`                                       |
+| Build for Production   | `ng build --base-href /God-is-The-Space-Between-Us/` |
+| Deploy to GitHub Pages | `npx angular-cli-ghpages --dir=dist/gitsbu/browser`  |
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+> Note: The `--base-href` is required for GitHub Pages so that routing works correctly.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Table of Contents
 
-```bash
-ng generate component component-name
-```
+- [Project Description](#project-description)
+- [Development](#development)
+- [Build](#build)
+- [Deployment](#deployment-to-github-pages)
+- [Folder Structure](#folder-structure)
+- [License](#license)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Project Description
 
-## Building
+"God-is-The-Space-Between-Us" is a web application built with Angular 19.  
+It features:
 
-To build the project run:
+- Interactive page animations (slide up/down transitions)
+- Dynamic routing with Angular Router
+- Responsive design for mobile and desktop
+- Modular and maintainable Angular architecture
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Development
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+To run the project locally in development mode with live reload:
 
 ```bash
-ng e2e
+npm install
+ng serve --o
 ```

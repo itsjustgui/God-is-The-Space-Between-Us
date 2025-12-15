@@ -22,14 +22,11 @@ export class ScrollFabComponent {
     // equals or exceeds the total document height (minus a small tolerance, 5px)
     const isAtBottom = windowHeight + scrollY >= documentHeight - 5;
 
-    // The prompt should be visible UNLESS the user is at the bottom
     const shouldBeVisible = !isAtBottom;
 
-    // Only update and detect changes if the state has actually changed
     if (this.isVisible !== shouldBeVisible) {
       this.isVisible = shouldBeVisible;
 
-      // Manually trigger change detection to update the view
       this.cdr.detectChanges();
     }
   }

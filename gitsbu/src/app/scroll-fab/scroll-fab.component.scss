@@ -28,6 +28,12 @@
   font-family: 'Inter', sans-serif;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Soft glow */
   transition: opacity 0.3s;
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevents clicking when invisible */
+    transform: translateX(-50%) translateY(10px); /* Slight slide down effect */
+  }
 }
 
 .scroll-fab-container:hover {
@@ -38,11 +44,10 @@
   width: 30px;
   height: 30px;
   padding: 8px;
-  border: 2px solid #d1952e; /* Muted rose border */
+  border: 2px solid #d1952e;
   border-radius: 50%;
   margin-bottom: 0.5rem;
 
-  /* Apply the animation to the icon itself */
   animation: bounce 2s infinite ease-in-out;
 }
 

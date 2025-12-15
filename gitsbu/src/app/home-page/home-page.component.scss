@@ -7,7 +7,7 @@
 
 .header-text-container {
   text-align: center;
-  padding: 9.5rem 1rem 2rem 1rem;
+  padding: 7.2rem 1rem 2rem 1rem;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -61,7 +61,7 @@
 }
 
 .nav-button:hover {
-  background-color: #c390b0; /* Slightly darker rose on hover */
+  background-color: var(--secondary-color); /* Slightly darker rose on hover */
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
