@@ -89,61 +89,71 @@
   font-style: italic;
 }
 
-/* --- RIPPED PAPER SECTION STYLES --- */
+/* --- RIPPED PAPER SECTION STYLES (Revised) --- */
+
+// NOTE: Keep the .ripped-paper-section block as it is (position, padding, etc.)
 .ripped-paper-section {
   position: relative;
   width: 100%;
-  padding: 3rem 0; /* Vertical padding */
-  margin: 4rem 0; /* Margin separates it from other elements */
+  padding: 3rem 0;
+  margin: 4rem 0;
   background-color: var(--color-paper);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 10; /* Ensures the paper sits above other elements if needed */
+  z-index: 10;
 }
 
-/* The core of the ripped effect: radial gradient on pseudo-elements */
+/* The core of the ripped effect: **Linear Gradient** on pseudo-elements */
 .ripped-paper-section::before,
 .ripped-paper-section::after {
   content: '';
   position: absolute;
   left: 0;
   width: 100%;
-  height: 15px; /* Height of the ripped edge effect */
-  background: none;
+  height: 15px; // Height of the ripped edge effect
   z-index: 15;
+  // Crucial: This ensures the pseudo-elements have the paper color
+  background-color: #e4dbdb;
 }
 
 /* Top ripped edge */
 .ripped-paper-section::before {
-  top: -15px; /* Position above the section */
-  /* Create the jagged edge texture using a repeating radial gradient for shadow/light */
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.1),
-    0 3px 3px rgba(0, 0, 0, 0.05); /* Soft shading */
-  background-image: repeating-radial-gradient(
-    circle at 10px 100%,
-    var(--color-paper) 8px,
-    transparent 8px,
-    transparent 10px
+  top: -15px;
+  /* Added a slight, dark border on the exposed edge to give depth */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  /* Use repeating linear gradient to create jagged points */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 2px,
+    /* Slopes up-right */ rgba(0, 0, 0, 0.1) 2px 4px,
+    /* Shadow line */ transparent 4px 6px,
+    rgba(0, 0, 0, 0.1) 6px 8px /* More shadow lines */
   );
   background-size: 20px 20px;
-  background-position: 0% 100%;
+
+  /* Add a subtle box shadow for lift */
+  box-shadow: 0 4px 5px -3px rgba(0, 0, 0, 0.2);
 }
 
 /* Bottom ripped edge */
 .ripped-paper-section::after {
-  bottom: -15px; /* Position below the section */
-  /* Flip the shadows and gradient direction */
-  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2), 0 -2px 2px rgba(0, 0, 0, 0.1),
-    0 -3px 3px rgba(0, 0, 0, 0.05);
-  background-image: repeating-radial-gradient(
-    circle at 10px 0%,
-    var(--color-paper) 8px,
-    transparent 8px,
-    transparent 10px
+  bottom: -15px;
+  /* Flip the border to the top */
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  /* Use repeating linear gradient, but change the direction/angle */
+  background-image: repeating-linear-gradient(
+    45deg,
+    /* Flipped angle from -45deg to 45deg */ transparent 0 2px,
+    rgba(0, 0, 0, 0.1) 2px 4px,
+    transparent 4px 6px,
+    rgba(0, 0, 0, 0.1) 6px 8px
   );
   background-size: 20px 20px;
-  background-position: 0% 0%;
-}
 
+  /* Flip the box shadow direction */
+  box-shadow: 0 -4px 5px -3px rgba(0, 0, 0, 0.2);
+}
 .ripped-content-wrapper {
   max-width: 600px;
   margin: 0 auto;

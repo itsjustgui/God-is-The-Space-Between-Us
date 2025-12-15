@@ -1,0 +1,32 @@
+<div class="review-form-container">
+  <h4>Leave a Note</h4>
+
+  <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <textarea
+        id="reviewText"
+        rows="4"
+        formControlName="review"
+        placeholder="Write something you feel…"
+      ></textarea>
+
+      @if (reviewForm.controls['review'].touched &&
+      reviewForm.controls['review'].errors?.['required']) {
+      <div class="validation-error">This message can’t be empty.</div>
+      } @if (reviewForm.controls['review'].touched &&
+      reviewForm.controls['review'].errors?.['minlength']) {
+      <div class="validation-error">At least 10 characters, please.</div>
+      }
+    </div>
+
+    <button type="submit" [disabled]="isSubmitting">
+      @if (isSubmitting) { Sending… } @else { Send }
+    </button>
+
+    @if (submissionSuccess) {
+    <p class="submission-message success">Thank you for leaving a trace.</p>
+    } @if (submissionError) {
+    <p class="submission-message error">Something went wrong. Try again.</p>
+    }
+  </form>
+</div>

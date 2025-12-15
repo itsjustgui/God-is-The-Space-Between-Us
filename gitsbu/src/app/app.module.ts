@@ -9,6 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { TheGalleryComponent } from './the-gallery/the-gallery.component';
 import { TheLetterComponent } from './the-letter/the-letter.component';
 import { ScrollFabComponent } from './scroll-fab/scroll-fab.component';
+import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,10 @@ import { ScrollFabComponent } from './scroll-fab/scroll-fab.component';
     TheGalleryComponent,
     TheLetterComponent,
     ScrollFabComponent,
+    FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, ReactiveFormsModule],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
