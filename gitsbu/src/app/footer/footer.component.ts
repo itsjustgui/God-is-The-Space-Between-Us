@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { finalize } from 'rxjs/operators'; // Used for simplifying loading state
@@ -17,10 +17,11 @@ export class FooterComponent implements OnInit {
   submissionSuccess = false;
   submissionError = false;
 
-  // 🛑 REPLACE THIS WITH YOUR ACTUAL FORMSPREE HASH ID URL 🛑
   private EMAIL_ENDPOINT = 'https://formspree.io/f/xpwvneoe';
 
   constructor(private fb: FormBuilder, private http: HttpClient) {}
+
+  @Input() showReviewForm = true;
 
   ngOnInit(): void {
     this.reviewForm = this.fb.group({

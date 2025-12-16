@@ -1,11 +1,34 @@
 <div @slidePage class="page gallery-page">
   <button class="back-btn" routerLink="home">← Back to Home</button>
-  <h1>📸 The Gallery</h1>
-  <p>Here you’ll see all the memories captured in photos.</p>
+  <h1 class="gallery-title">Shared Moments</h1>
+
+  <p class="gallery-intro">
+    This is a digital copy of the pictures used in the album. Every single one of these images was
+    created and edited carefully, and they portray how I see you and what I feel for you. Whether
+    you are looking at the digital or physical version of these photos, take your time with each
+    one, and don’t miss the details.
+  </p>
 
   <div class="gallery-grid">
-    <div class="gallery-item">Image 1</div>
-    <div class="gallery-item">Image 2</div>
-    <div class="gallery-item">Image 3</div>
+    <figure
+      class="gallery-item"
+      *ngFor="let item of gallery; trackBy: trackById"
+      (click)="openPreview(item)"
+    >
+      <img [src]="item.url" />
+      <figcaption *ngIf="item.caption">{{ item.caption }}</figcaption>
+    </figure>
   </div>
+
+  <!-- Image Preview Modal -->
+  @if (selectedImage) {
+  <div class="lightbox" (click)="closePreview()">
+    <img [src]="selectedImage.url" (click)="$event.stopPropagation()" />
+    @if (selectedImage.caption) {
+    <p class="lightbox-caption">{{ selectedImage.caption }}</p>
+    }
+    <button class="close-btn">x</button>
+  </div>
+  }
 </div>
+<app-footer [showReviewForm]="false"></app-footer>
