@@ -46,7 +46,7 @@ article::before {
   position: absolute;
   top: 100%;
   height: 20px;
-  margin-top: -920px;
+  margin-top: -1140px;
   width: 100%;
   left: 0;
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
@@ -69,12 +69,59 @@ article::before {
 }
 
 .video-container {
-  max-width: 800px;
-  margin-top: -50px;
-  margin-bottom: 2%;
-  border-radius: 15px;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 100px auto 2rem;
+  animation: rise-in 0.8s ease-out both;
+  aspect-ratio: 9 / 16;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: 20px 10px 30px rgba(5, 4, 4, 0.15);
+}
+
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.airpod-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  opacity: 0.85;
+
+  p {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--color-text-body, #555);
+    margin-bottom: -250px;
+  }
+
+  img {
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    margin-bottom: -150px;
+  }
 }
 
 @media (max-width: 480px) {
