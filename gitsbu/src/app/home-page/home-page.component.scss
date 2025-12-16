@@ -80,23 +80,41 @@
 }
 /* --- END NAVIGATION BUTTON STYLES --- */
 
-/* Spacer to force scrolling */
 .content-spacer {
   text-align: center;
   padding: 2rem;
-  color: #aaa;
+  color: #838282;
   font-style: italic;
 }
 
 .ripped-paper-section {
   width: 100%;
   padding: 4rem 2rem;
-
   display: flex;
   justify-content: center;
-
-  /* subtle separation from background */
   background: transparent;
-
   overflow-x: hidden;
+}
+
+.note-hint {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 290px;
+  margin: 0 auto;
+}
+
+.note-hint img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  transform: rotate(50deg);
+  margin-top: 1.5rem;
+}
+
+.note-hint p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
 }

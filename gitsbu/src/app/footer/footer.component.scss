@@ -73,7 +73,7 @@
 
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0;
   box-sizing: border-box;
   padding: 2.2rem;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
@@ -157,7 +157,7 @@ button[type='submit'] {
 .validation-error {
   margin-top: 0.4rem;
   font-size: 0.8rem;
-  color: #fccccc;
+  color: #fd0b0b;
 }
 
 .submission-message {
@@ -167,7 +167,7 @@ button[type='submit'] {
   text-align: center;
 
   &.success {
-    color: #a6f4c5;
+    color: #0ac956;
   }
 
   &.error {
@@ -184,6 +184,53 @@ button[type='submit'] {
   font-size: 0.8rem;
   opacity: 0.55;
   padding-top: 1.2rem;
+}
+
+.under-footer {
+  width: 100%;
+  padding: 1.2rem 1rem 1.6rem;
+  background-color: var(--primary-color);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.under-footer-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+}
+
+.under-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+
+  a {
+    font-size: 0.75rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.under-footer-note {
+  font-size: 0.7rem;
+  opacity: 0.45;
+  font-style: italic;
 }
 
 /* ================================

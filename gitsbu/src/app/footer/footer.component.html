@@ -12,7 +12,7 @@
 
       @if (reviewForm.controls['review'].touched &&
       reviewForm.controls['review'].errors?.['required']) {
-      <div class="validation-error">This message can’t be empty.</div>
+      <div class="validation-error">If you wanna send you gotta write something.</div>
       } @if (reviewForm.controls['review'].touched &&
       reviewForm.controls['review'].errors?.['minlength']) {
       <div class="validation-error">At least 10 characters, please.</div>
@@ -24,9 +24,22 @@
     </button>
 
     @if (submissionSuccess) {
-    <p class="submission-message success">Thank you for leaving a trace.</p>
+    <p class="submission-message success">Message sent. I will read it someday :)</p>
     } @if (submissionError) {
     <p class="submission-message error">Something went wrong. Try again.</p>
     }
   </form>
+</div>
+<div class="under-footer">
+  <div class="under-footer-content">
+    <p class="copyright">© 2025 Guilherme Salgueiro</p>
+
+    <nav class="under-footer-links">
+      <a routerLink="/">Home</a>
+      <a routerLink="/the-letter">Letter</a>
+      <a routerLink="/the-gallery">Gallery</a>
+    </nav>
+
+    <p class="under-footer-note">Desenvolvido com amor e carinho.</p>
+  </div>
 </div>
