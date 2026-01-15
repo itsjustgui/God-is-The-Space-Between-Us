@@ -1,0 +1,157 @@
+<div class="about-container">
+  <nav class="about-nav">
+    <button class="back-btn" routerLink="/home">← Back to Home</button>
+  </nav>
+
+  <header class="about-hero">
+    <div class="logo-wrapper">
+      <div class="placeholder-logo"><img src="logoWhite.png" alt="Gitsbu Logo" /></div>
+    </div>
+    <h1 class="about-title">About This Project</h1>
+    <p class="about-tagline">#the heart behind the code</p>
+  </header>
+
+  <section class="about-section paper-card">
+    <h2>The Purpose</h2>
+    <p>
+      There was this one song called <b>"God Is The Space Between Us"</b> and if you remember, I
+      always wanted to make a video with it for us. I always found that title super interesting
+      because we were doing long distance for a good part of our relationship, and that song always
+      reminded me of you.
+    </p>
+
+    <p>
+      So I chose to make that title the theme of this project, wich is more than adequate, given
+      that distance is all we have left now. This project is composed of three main parts:
+    </p>
+
+    <a
+      href="https://open.spotify.com/intl-pt/track/5I73WkfhuOvavHVYk3TGrm?si=e491c186aea14efb"
+      target="_blank"
+      class="spotify-link"
+      title="Open in Spotify"
+    >
+      <img src="godIsTheSpaceBetweenUsShort.png" alt="Spotify Code" class="spotify-code" />
+    </a>
+  </section>
+
+  <section class="about-section">
+    <div class="grid-layout">
+      <div class="grid-item">
+        <h3>The PhotoBook</h3>
+        <p>
+          A physical album that captures our story, from start to end. Each page was carefully
+          crafted to display our timeline.
+        </p>
+      </div>
+      <div class="grid-item">
+        <h3>The Flowers</h3>
+        <p>A vase of handmade crochet flowers made by myself, cute and good for decoration.</p>
+      </div>
+      <div class="grid-item">
+        <h3>This Page & Video</h3>
+        <p>
+          The bridge that brings together the memories captured in the book, as well as the video
+          that I always wanted to make (I'm sure you will recognize it).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section work-insight">
+    <h2>The Work Put In</h2>
+    <div class="insight-content">
+      <p>
+        It was quite time consuming to put all of this together. Many times I thought to myself:
+        <i
+          >"Gui, she already has a new man, and you are with someone else too, why do you keep
+          workinig on this?"</i
+        >
+        But then I realized this was indeed the last step I needed to really move on, and allow the
+        thought of you to be nothing but a good memories I spent with a special person at a time of
+        my life.
+      </p>
+      <p>
+        Dozens of hours were spent refining everything, from the video editing to the image collage
+        for the book.<br /><br />
+        For the flowers, I had to take classes of crochet to learn how to follow the tutorial and
+        make the flowers right (It was quite fun tho can't lie).<br /><br />
+        The hardest and most time consuming was making this page. I wanted to make sure it looked
+        pretty and that the center of it was <b>you</b>. Everything from the colors to the
+        animations and design was carefully thought. Did you like the background of the app being
+        some snippets of our moments? Pretty cool right?
+      </p>
+      <div class="stats-container">
+        <div class="stat-chip">
+          <div class="stat-image">
+            <img src="crochetflowers.png" alt="Crochet Work" />
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Crochet Learning</span>
+            <div class="stat-number">
+              <span class="count">{{ crochetHours }}</span>
+              <span class="unit">d</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-chip">
+          <div class="stat-image">
+            <img src="photobook.jpg" alt="Editing Work" />
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Video & Design</span>
+            <div class="stat-number">
+              <span class="count">{{ editingHours }}</span>
+              <span class="unit">d</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-chip">
+          <div class="stat-image">
+            <img src="gitsbupage.png" alt="Coding Work" />
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Programming</span>
+            <div class="stat-number">
+              <span class="count">{{ codingHours }}</span>
+              <span class="unit">d</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-section video-reaction">
+    <div class="insight-content video-card">
+      <p class="closing-remark">
+        <br />
+        All in all, I believe the effort was worth it. Check out this funny video of Fabio reacting
+        to the project hahahaha:
+      </p>
+      <div class="vimeo-container">
+        <div class="vimeo-wrapper">
+          <iframe
+            src="https://player.vimeo.com/video/1154549210?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="reaction"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content-spacer">
+    <div class="note-hint">
+      <p>
+        As I mentioned before, this is the last step of closure for me. But if there is any remark
+        you would like to make about anything you can do so down here.
+      </p>
+      <img src="downArrow.png" />
+    </div>
+  </section>
+</div>
+<app-footer [showReviewForm]="true"></app-footer>

@@ -1,11 +1,10 @@
-.page {
-  min-height: 100vh; /* full screen */
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: var(--secondary-color);
+/* Import a handwritten font for the signature and a classic serif for the body */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600&display=swap');
+
+.letter-page {
+  background: #d9e2ec; /* A slightly more "muted/dusty" blue for the desk feel */
+  min-height: 100vh;
+  padding: 2rem 1rem;
 }
 
 .back-btn {
@@ -17,21 +16,103 @@
   color: var(--color-primary);
 }
 
-h1 {
-  margin-bottom: 1rem;
+.header-nav {
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
-.intro {
-  font-style: italic;
-  margin-bottom: 2rem;
+.letter-container {
+  perspective: 1000px; /* Gives a slight 3D feel */
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .letter-box {
-  max-width: 600px;
-  background: #fafafa;
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  line-height: 1.6;
+  max-width: 650px;
+  width: 100%;
+  background-color: #fffef0; /* Warm paper ivory */
+  padding: 4rem 3.5rem;
+  position: relative;
+
+  /* Create a subtle lined paper effect */
+  background-image: linear-gradient(#e1e1e1 1px, transparent 1px);
+  background-size: 100% 2.2rem;
+  line-height: 2.2rem; /* Matches the line spacing of the background */
+
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.05);
+
+  /* Decorative page curl effect */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    width: 150px;
+    height: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transform: rotate(2deg);
+    z-index: -1;
+  }
+}
+
+.letter-header {
+  text-align: right;
+  margin-bottom: 2rem;
+  font-family: 'Crimson Text', serif;
+  color: #666;
+}
+
+.letter-content {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.25rem;
+  color: #2d3436;
+
+  .greeting {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    margin-bottom: 2.2rem;
+  }
+
+  p {
+    margin-bottom: 2.2rem; /* Keep text aligned to the lines */
+  }
+}
+
+.letter-quote {
+  display: inline-block; /* Allows the background to wrap tight */
+  background: rgba(255, 235, 59, 0.4); /* Subtle yellow highlighter */
+  padding: 0 10px;
+  margin: 2.2rem auto !important;
+  font-weight: 600;
+  font-style: italic;
+  box-shadow: 2px 0 5px rgba(255, 235, 59, 0.4), -2px 0 5px rgba(255, 235, 59, 0.4);
+  transform: rotate(-0.5deg); /* Makes it look hand-highlighted */
+  text-align: center;
+  width: fit-content;
+}
+
+.letter-footer {
+  margin-top: 4rem;
+  font-family: 'Crimson Text', serif;
+
+  .signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-top: 1rem;
+    line-height: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .letter-box {
+    padding: 2rem 1.5rem;
+    background-size: 100% 2rem;
+    line-height: 2rem;
+  }
 }

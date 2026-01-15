@@ -1,0 +1,318 @@
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.about-nav {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: var(--color-primary);
+  }
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 5rem;
+
+  .placeholder-logo {
+    width: 80%;
+    height: 15%;
+    background: #2a3d66;
+    font-family: 'Story Script', sans-serif;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-left: 35px;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 20px rgba(42, 61, 102, 0.2);
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      padding: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  .about-title {
+    font-family: 'Story Script', sans-serif;
+    font-size: 3.5rem;
+    color: #2a3d66;
+    margin: 0;
+  }
+
+  .about-tagline {
+    font-size: 0.6rem;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.about-section {
+  margin-bottom: 6rem;
+  line-height: 1.7;
+
+  h2 {
+    font-family: 'Story Script', sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  &.paper-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px var(--color-accent); // Retro "offset" shadow
+    border: 1px solid #eee;
+    position: relative;
+    padding: 2rem 2.5rem 4rem 2.5rem;
+    p {
+      margin-bottom: 3.5rem;
+    }
+
+    .spotify-link {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+      }
+
+      .spotify-code {
+        width: 140px;
+        height: auto;
+        display: block;
+        border-radius: 15px;
+      }
+    }
+
+    /* On very small mobile screens, move it to the center so it doesn't look cramped */
+    @media (max-width: 480px) {
+      .about-section.paper-card {
+        padding-bottom: 7rem;
+      }
+
+      .spotify-link {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 15px;
+
+        &:hover {
+          transform: translateX(50%) scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+
+  .grid-item {
+    padding: 1.5rem;
+    border-left: 3px solid #f0ae3c;
+
+    h3 {
+      margin-top: 0;
+      color: #2a3d66;
+    }
+    p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+  }
+}
+
+.work-insight {
+  .insight-content {
+    background: #f9f9f9;
+    padding: 2.5rem;
+    border-radius: 12px;
+
+    blockquote {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      text-align: center;
+      margin: 2rem 0;
+      color: #555;
+    }
+  }
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.stat-chip {
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .stat-image {
+    width: 60px;
+    height: 60px;
+    background: #f0f4f8;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 1.2rem;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .stat-info {
+    display: flex;
+    flex-direction: column;
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-number {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #2a3d66;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+
+      .unit {
+        font-size: 1rem;
+        margin-left: 2px;
+        color: var(--color-accent);
+      }
+    }
+  }
+}
+
+.content-spacer {
+  text-align: center;
+  padding: 2rem;
+  color: #838282;
+  font-style: italic;
+}
+
+.note-hint {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 290px;
+  margin: 0 auto;
+}
+
+.note-hint img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  transform: rotate(50deg);
+  margin-top: 1.5rem;
+}
+
+.note-hint p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.video-reaction {
+  margin-top: -50px;
+  margin-bottom: -10px;
+  .video-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the video in the card */
+  }
+
+  .vimeo-container {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 400px; /* Limits size on desktop so it doesn't overwhelm the page */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: #000;
+  }
+
+  .vimeo-wrapper {
+    position: relative;
+    width: 100%;
+    /* 133.33% is the aspect ratio for vertical video (3:4) */
+    padding-top: 133.33%;
+    height: 0;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* Ensure mobile looks clean */
+@media (max-width: 600px) {
+  .video-reaction .video-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .about-hero .about-title {
+    font-size: 2.5rem;
+  }
+  .about-section.paper-card {
+    padding: 1.5rem;
+  }
+}

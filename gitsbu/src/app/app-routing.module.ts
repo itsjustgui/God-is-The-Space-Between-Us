@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component'; // Assuming you have this
 import { TheLetterComponent } from './the-letter/the-letter.component'; // Placeholder
 import { TheGalleryComponent } from './the-gallery/the-gallery.component'; // Placeholder
+import { AboutGitsbuComponent } from './about-gitsbu/about-gitsbu.component';
 
 // Define your routes here
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'the-letter', component: TheLetterComponent },
   { path: 'the-gallery', component: TheGalleryComponent },
+  { path: 'about-gitsbu', component: AboutGitsbuComponent },
   { path: '**', redirectTo: 'home' },
 ];
 

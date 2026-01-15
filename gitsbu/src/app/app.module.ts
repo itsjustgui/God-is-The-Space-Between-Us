@@ -13,6 +13,7 @@ import { ScrollFabComponent } from './scroll-fab/scroll-fab.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
+import { AboutGitsbuComponent } from './about-gitsbu/about-gitsbu.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { provideHttpClient } from '@angular/common/http';
     ScrollFabComponent,
     FooterComponent,
     RippedPaperSectionComponent,
+    AboutGitsbuComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, ReactiveFormsModule],
   providers: [provideHttpClient()],

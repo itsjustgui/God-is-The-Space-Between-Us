@@ -32,6 +32,16 @@
   font-style: italic;
 }
 
+.gallery-intro::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin: 2rem auto 0;
+  background: var(--secondary-color);
+  opacity: 0.4;
+}
+
 .back-btn {
   background: none;
   border: none;
@@ -81,7 +91,7 @@
     color: white;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.6s ease;
   }
 
   &:hover img {
@@ -130,4 +140,38 @@
   color: white;
   font-size: 2.2rem;
   cursor: pointer;
+}
+
+.gallery-external-link {
+  margin: 1.8rem auto 3rem;
+  max-width: 680px;
+  padding: 0 1.4rem;
+
+  text-align: center;
+}
+
+.gallery-external-text {
+  font-size: 0.9rem;
+  color: var(--text-body-color);
+  opacity: 0.7;
+  margin-bottom: 0.6rem;
+  font-style: italic;
+}
+
+.gallery-drive-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 5%;
+  color: var(--secondary-color);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    border-bottom-color: var(--secondary-color);
+  }
 }
